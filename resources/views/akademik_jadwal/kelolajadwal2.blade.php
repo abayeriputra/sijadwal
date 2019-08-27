@@ -19,7 +19,7 @@
             <input type="hidden" name="id_tahunajaran" value="{{$th}}">  
             <button type="submit" class="btn btn-success">New</button>                        
         </form>  &nbsp; &nbsp;    
-        <a href="../../febjadwal.xlsx" class="btn btn-primary">Download Template</a> &nbsp;             
+        <a href="../../fhjadwal.xlsx" class="btn btn-primary">Download Template</a> &nbsp;             
         <a href="{{route('kelolajadwal_import')}}" class="btn btn-primary">Import Excel</a> &nbsp; 
         <a href="{{route('exportjadwal',$th)}}" class="btn btn-primary">Export Excel</a>&nbsp;
         

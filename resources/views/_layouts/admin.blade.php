@@ -7,9 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="author" content="feb">
+  <meta name="author" content="fh">
 
-  <title>FEB - SIJADWAL</title>
+  <title>FH - SIJADWAL</title>
   <!-- Favicon -->
   <link rel="icon" href="{{asset('img/core-img/logounlam.png')}}">
   <!-- Custom fonts for this template-->

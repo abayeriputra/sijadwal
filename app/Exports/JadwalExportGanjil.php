@@ -3,7 +3,7 @@
 namespace App\Exports;
 
 use Maatwebsite\Excel\Concerns\FromCollection;
-use App\Jadwalfeb;
+use App\Jadwalfh;
 use App\Jadwalguest;
 use App\tahun_ajaran;
 Use DB;
@@ -29,7 +29,7 @@ class JadwalExportGanjil implements FromView, WithEvents
         return [
 
             AfterSheet::class    => function(AfterSheet $event) {
-            $a = DB::table('jadwalfeb')->where('id_tahunajaran', $this->id)->count();
+            $a = DB::table('jadwalfh')->where('id_tahunajaran', $this->id)->count();
            
                 $event->sheet->styleCells(
                     'A4:M'.$a,
@@ -48,8 +48,8 @@ class JadwalExportGanjil implements FromView, WithEvents
 
     public function view(): View
     {
-        return view('jadwalfebexcelganjil', [
-            'jadwalfeb' => Jadwalfeb::where('id_tahunajaran', $this->id)->get(),
+        return view('jadwalfhexcelganjil', [
+            'jadwalfh' => Jadwalfh::where('id_tahunajaran', $this->id)->get(),
             'id_tahunajaran' => tahun_ajaran::where('id_tahunajaran', $this->id)->first(),
             'jadwalguest' => Jadwalguest::where('id', 1)->first()  
         ]);

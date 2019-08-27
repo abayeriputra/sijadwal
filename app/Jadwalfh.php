@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Jadwalfeb extends Model
+class Jadwalfh extends Model
 {
-    protected $table = 'jadwalfeb';  
+    protected $table = 'jadwalfh';  
 
     protected $guarded = []; //TAMBAHKAN LINE INI
 

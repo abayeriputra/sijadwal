@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon">
           <img src="{{asset('img/core-img/logounlam.png')}}" style="width: 50px;">
         </div>
-        <div class="sidebar-brand-text mx-3">FEB - ULM</sup></div>
+        <div class="sidebar-brand-text mx-3">FH - ULM</sup></div>
       </a>
 
       <!-- Divider -->

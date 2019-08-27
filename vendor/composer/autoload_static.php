@@ -512,7 +512,7 @@ class ComposerStaticInit3aeb66215533fef8a395d5f21deeb7ad
         'App\\Imports\\JadwalImport' => __DIR__ . '/../..' . '/app/Imports/JadwalImport.php',
         'App\\Item' => __DIR__ . '/../..' . '/app/Item.php',
         'App\\Jadwal' => __DIR__ . '/../..' . '/app/Jadwal.php',
-        'App\\Jadwalfeb' => __DIR__ . '/../..' . '/app/Jadwalfeb.php',
+        'App\\Jadwalfh' => __DIR__ . '/../..' . '/app/Jadwalfh.php',
         'App\\Jadwalguest' => __DIR__ . '/../..' . '/app/Jadwalguest.php',
         'App\\Jam' => __DIR__ . '/../..' . '/app/Jam.php',
         'App\\List_history' => __DIR__ . '/../..' . '/app/List_history.php',

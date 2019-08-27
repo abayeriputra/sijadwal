@@ -48,7 +48,7 @@ return array(
     'App\\Imports\\JadwalImport' => $baseDir . '/app/Imports/JadwalImport.php',
     'App\\Item' => $baseDir . '/app/Item.php',
     'App\\Jadwal' => $baseDir . '/app/Jadwal.php',
-    'App\\Jadwalfeb' => $baseDir . '/app/Jadwalfeb.php',
+    'App\\Jadwalfh' => $baseDir . '/app/Jadwalfh.php',
     'App\\Jadwalguest' => $baseDir . '/app/Jadwalguest.php',
     'App\\Jam' => $baseDir . '/app/Jam.php',
     'App\\List_history' => $baseDir . '/app/List_history.php',

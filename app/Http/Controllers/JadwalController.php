@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\tahun_ajaran;
 use App\Matkul;
 use App\Jadwal;
-use App\Jadwalfeb;
+use App\Jadwalfh;
 use App\Ruangan;
 use App\Dosen;
 use App\Prodi;
@@ -58,20 +58,20 @@ class JadwalController extends Controller
     public function kelolajadwal_export($id)
     {
         $id = $id;
-        $jadwalfeb = Jadwalfeb::where('id_tahunajaran', $id)->get(); 
+        $jadwalfh = Jadwalfh::where('id_tahunajaran', $id)->get(); 
 
-        return View('jadwalfeb', compact('jadwalfeb','id'));
+        return View('jadwalfh', compact('jadwalfh','id'));
     }
  
     public function kelolajadwal_exportsimpan($id)
     {
-        $jadwalfeb = tahun_ajaran::where('id_tahunajaran', $id)->first();
+        $jadwalfh = tahun_ajaran::where('id_tahunajaran', $id)->first();
 
-        if($jadwalfeb->semester == "GENAP") {
-        return Excel::download(new JadwalExport($id), 'jadwalfeb.xlsx');
+        if($jadwalfh->semester == "GENAP") {
+        return Excel::download(new JadwalExport($id), 'jadwalfh.xlsx');
         }
         else{
-        return Excel::download(new JadwalExportGanjil($id), 'jadwalfeb.xlsx');
+        return Excel::download(new JadwalExportGanjil($id), 'jadwalfh.xlsx');
         }
     }
 
@@ -80,7 +80,7 @@ class JadwalController extends Controller
         $input = $request->all();
         $th= $input['id_tahunajaran'];
         $tahun_ajaran = tahun_ajaran::where('id_tahunajaran', $th)->get();    
-        $data = Jadwalfeb::where('id_tahunajaran', $th)->get(); 
+        $data = Jadwalfh::where('id_tahunajaran', $th)->get(); 
 
         return View('akademik_jadwal.kelolajadwal', compact('data','th'));
     }
@@ -89,7 +89,7 @@ class JadwalController extends Controller
     {
         $th= $id_jadwal;
         $tahun_ajaran = tahun_ajaran::where('id_tahunajaran', $th)->get();    
-        $data = Jadwalfeb::where('id_tahunajaran', $th)->get(); 
+        $data = Jadwalfh::where('id_tahunajaran', $th)->get(); 
 
         return View('akademik_jadwal.kelolajadwal2', compact('data','th'));
     }
@@ -126,7 +126,7 @@ class JadwalController extends Controller
       'dosen1'=>'required'
     ]);       
     
-    $data = Jadwalfeb::where('id_tahunajaran', $th)->get();
+    $data = Jadwalfh::where('id_tahunajaran', $th)->get();
     foreach ($data as $dt)
     {
         if(($dt->ruangan == $request->input('ruangan')) and ($dt->jam == $request->input('jam')) and ($dt->hari == $request->input('hari')))
@@ -135,7 +135,7 @@ class JadwalController extends Controller
         ->with('flash_message','Ruangan Tidak Tersedia. GAGAL!!!');
         }
     }
-    Jadwalfeb::create($input);
+    Jadwalfh::create($input);
     $kul = $request->input('nama_matkul');
     $har = $request->input('hari');
     $jm = $request->input('jam');
@@ -151,7 +151,7 @@ class JadwalController extends Controller
 
     public function editkelolajadwal($id_jadwal)
     {
-        $data = Jadwalfeb::where('id', $id_jadwal)->first();
+        $data = Jadwalfh::where('id', $id_jadwal)->first();
         $th = $data->id_tahunajaran;
         $hari = Hari::orderBy('created_at', 'asc')->get();
         $jam = Jam::orderBy('created_at', 'asc')->get();          
@@ -160,7 +160,7 @@ class JadwalController extends Controller
 
     public function updatekelolajadwal(Request $request, $id_jadwal)
     {
-    $jadwal = Jadwalfeb::find($id_jadwal);
+    $jadwal = Jadwalfh::find($id_jadwal);
     $th = $jadwal->id_tahunajaran;
     $input = $request->all();
     $validator  = $request->validate([
@@ -179,7 +179,7 @@ class JadwalController extends Controller
       'dosen1'=>'required'
     ]); 
 
-    $data = Jadwalfeb::where('id_tahunajaran', $th)->get();
+    $data = Jadwalfh::where('id_tahunajaran', $th)->get();
     foreach ($data as $dt)
     {
         if(($dt->ruangan == $request->input('ruangan')) and ($dt->jam == $request->input('jam')) and ($dt->hari == $request->input('hari')) and ($dt->id != $id_jadwal))
@@ -205,7 +205,7 @@ class JadwalController extends Controller
     public function deletekelolajadwal(Request $request, $id_jadwal)
     {
         $input = $request->all(); 
-        $jadwal = Jadwalfeb::find($id_jadwal);    
+        $jadwal = Jadwalfh::find($id_jadwal);    
         $th = $jadwal->id_tahunajaran; 
 
     $kul = $jadwal->nama_matkul;
@@ -235,7 +235,7 @@ class JadwalController extends Controller
         $list_history = DB::table('list_history')->insert([
         ['keterangan' => 'Berhasil menghapus data jadwal untuk tahun ajaran: '.$kul.', Semester: '.$har]       
         ]); 
-        $jadwal = Jadwalfeb::WHERE('id_tahunajaran', $id)->get()->each->delete();
+        $jadwal = Jadwalfh::WHERE('id_tahunajaran', $id)->get()->each->delete();
 
     	return redirect()->route('kelolajadwal2',$id)->with('flash_message','Data Berhasil Dihapus.');
     }
@@ -274,7 +274,7 @@ class JadwalController extends Controller
     $input = $request->all();
     $th= $input['id_tahunajaran'];
     $tahun_ajaran = tahun_ajaran::where('id_tahunajaran', $th)->get();    
-    $data = Jadwalfeb::where('id_tahunajaran', $th)->get(); 
+    $data = Jadwalfh::where('id_tahunajaran', $th)->get(); 
 
     return view('akademik_jadwal.hasiljadwal', compact('th','tahun_ajaran','data'));
     }    

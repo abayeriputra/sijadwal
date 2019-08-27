@@ -8,7 +8,7 @@ use App\Berita;
 use App\ruangan;
 use App\Jadwalguest;
 use App\tahun_ajaran;
-use App\Jadwalfeb;
+use App\Jadwalfh;
 use DB;
 use App\Mahasiswa;
 use App\Organisasi;
@@ -69,14 +69,14 @@ class GuestController extends Controller
         $ruangan = ruangan::orderBy('created_at', 'asc')->get();  
         $tahun_ajaran = tahun_ajaran::orderBy('created_at', 'asc')->get();
         $jadwalguest = Jadwalguest::orderBy('created_at', 'asc')->first();
-        $data = Jadwalfeb::where('id_tahunajaran', $jadwalguest->id_tahunajaran)->orderBy('hari', 'desc')->get();
-        $datark = Jadwalfeb::where('id_tahunajaran', $jadwalguest->id_tahunajaran)->where('hari',$tes)->distinct()->get(['ruangan']);
+        $data = Jadwalfh::where('id_tahunajaran', $jadwalguest->id_tahunajaran)->orderBy('hari', 'desc')->get();
+        $datark = Jadwalfh::where('id_tahunajaran', $jadwalguest->id_tahunajaran)->where('hari',$tes)->distinct()->get(['ruangan']);
         $jam = Db::select(
             "SELECT * FROM tb_jam WHERE nama_jam NOT IN (SELECT jam
-            FROM jadwalfeb WHERE id_tahunajaran = $jadwalguest->id_tahunajaran AND hari != 'Jumat' AND hari = '$tes') AND nama_jam != '09:50:00' AND nama_jam != '14:00:00'");
+            FROM jadwalfh WHERE id_tahunajaran = $jadwalguest->id_tahunajaran AND hari != 'Jumat' AND hari = '$tes') AND nama_jam != '09:50:00' AND nama_jam != '14:00:00'");
         $jamjumat = Db::select(
             "SELECT * FROM tb_jam WHERE nama_jam NOT IN (SELECT jam
-            FROM jadwalfeb WHERE id_tahunajaran = $jadwalguest->id_tahunajaran AND hari = 'Jumat') AND nama_jam != '10:30:00' AND nama_jam != '13:30:00'");        
+            FROM jadwalfh WHERE id_tahunajaran = $jadwalguest->id_tahunajaran AND hari = 'Jumat') AND nama_jam != '10:30:00' AND nama_jam != '13:30:00'");        
     	return view('guest.jadwal', compact('prodi','data','datark','hari','tgl','ruangan','tes','jam','jamjumat','jadwalguest','tahun_ajaran'));
     }
 
@@ -95,34 +95,34 @@ class GuestController extends Controller
         $tglberita=date('Y-m-d');
         $jadwalguest = Jadwalguest::orderBy('created_at', 'asc')->first();
         $data = Db::select(
-              "SELECT * FROM jadwalfeb WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester DESC LIMIT 10 OFFSET 0"
+              "SELECT * FROM jadwalfh WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester DESC LIMIT 10 OFFSET 0"
         );
         $data2 = Db::select(
-              "SELECT * FROM jadwalfeb WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester
+              "SELECT * FROM jadwalfh WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester
               LIMIT 10 OFFSET 10"
         );      
         $data3 = Db::select(
-              "SELECT * FROM jadwalfeb WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester LIMIT 10 OFFSET 20"
+              "SELECT * FROM jadwalfh WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester LIMIT 10 OFFSET 20"
         );                  
 
         $data4 = Db::select(
-              "SELECT * FROM jadwalfeb WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester LIMIT 10 OFFSET 30"
+              "SELECT * FROM jadwalfh WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester LIMIT 10 OFFSET 30"
         );
 
         $data5 = Db::select(
-              "SELECT * FROM jadwalfeb WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester LIMIT 10 OFFSET 40"
+              "SELECT * FROM jadwalfh WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester LIMIT 10 OFFSET 40"
         );
 
         $data6 = Db::select(
-              "SELECT * FROM jadwalfeb WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester LIMIT 10 OFFSET 50"
+              "SELECT * FROM jadwalfh WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester LIMIT 10 OFFSET 50"
         );
 
         $data7 = Db::select(
-              "SELECT * FROM jadwalfeb WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester LIMIT 10 OFFSET 60"
+              "SELECT * FROM jadwalfh WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester LIMIT 10 OFFSET 60"
         );
 
         $data8 = Db::select(
-              "SELECT * FROM jadwalfeb WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester
+              "SELECT * FROM jadwalfh WHERE hari = '$tes' and id_tahunajaran=$jadwalguest->id_tahunajaran ORDER BY hari, jam, prodi, semester
               LIMIT 10 OFFSET 70"
         );
 

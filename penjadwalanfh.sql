@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `penjadwalanfeb`
+-- Database: `penjadwalanfh`
 --
 
 -- --------------------------------------------------------
@@ -105,10 +105,10 @@ INSERT INTO `items` (`id`, `title`, `description`, `created_at`, `updated_at`) V
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jadwalfeb`
+-- Struktur dari tabel `jadwalfh`
 --
 
-CREATE TABLE `jadwalfeb` (
+CREATE TABLE `jadwalfh` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `id_tahunajaran` int(10) UNSIGNED DEFAULT NULL,
   `prodi` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -729,11 +729,11 @@ ALTER TABLE `items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `jadwalfeb`
+-- Indeks untuk tabel `jadwalfh`
 --
-ALTER TABLE `jadwalfeb`
+ALTER TABLE `jadwalfh`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `jadwalfeb_id_tahunajaran_foreign` (`id_tahunajaran`);
+  ADD KEY `jadwalfh_id_tahunajaran_foreign` (`id_tahunajaran`);
 
 --
 -- Indeks untuk tabel `jadwalguest`

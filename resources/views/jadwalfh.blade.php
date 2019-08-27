@@ -21,7 +21,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($jadwalfeb as $s)
+                @foreach($jadwalfh as $s)
                 <tr>
                     <td>{{$s->nama_matkul}}</td>
                     <td>{{$s->ruangan}}</td>

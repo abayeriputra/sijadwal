@@ -1,7 +1,7 @@
 @extends('_layouts.base')
 
 @section('judulawal') 
-<section class="breadcrumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/fekon.jpg);">
+<section class="breadcrumb-area bg-img bg-overlay" style="background-image: url(img/core-img/logoulm.jpg);">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
@@ -46,7 +46,7 @@
             <div class="post-content">
                 <div class="post-meta">
                     <a style="font-weight: bold;">{{$tgl_indo1}}</a>
-                    <a style="font-weight: bold;">By Akademik - FEB</a>
+                    <a style="font-weight: bold;">By Akademik - FH</a>
                 </div>
                 <a href="{{route('pengumuman', $brt->id_berita)}}" class="post-title" style="font-weight: bold;">Pengumuman</a>
 
@@ -76,10 +76,10 @@
             <!-- Social Followers Info -->
             <div class="social-followers-info">
                 <!-- Facebook -->
-                <a href="https://www.facebook.com/bemfebulm" class="facebook-fans"><i class="fa fa-facebook"></i> FEB - UNLAM </a>
+                <a href="https://www.facebook.com/fakultashukum.ulm" class="facebook-fans"><i class="fa fa-facebook"></i> FH - UNLAM </a>
                 <!-- Twitter -->
-                <a href="https://twitter.com/febunlam?lang=en" class="twitter-followers"><i class="fa fa-twitter"></i> FEB - UNLAM</a>
-                <a href="https://www.instagram.com/febulm/" class="instagram-followers"><i class="fa fa-instagram"></i> FEB - UNLAM</a>                
+                <a href="https://twitter.com/bemfhulm?lang=en" class="twitter-followers"><i class="fa fa-twitter"></i> FH - UNLAM</a>
+                <a href="https://www.instagram.com/bemfh_ulm/" class="instagram-followers"><i class="fa fa-instagram"></i> FH - UNLAM</a>                
             </div>
         </div>
 
