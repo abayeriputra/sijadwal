@@ -1,5 +1,46 @@
 [
     {
+        "name": "almasaeed2010/adminlte",
+        "version": "v3.0.0-beta.2",
+        "version_normalized": "3.0.0.0-beta2",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ColorlibHQ/AdminLTE.git",
+            "reference": "1ff65e5bd99ab3ee8985e9512b2096efce58edd2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ColorlibHQ/AdminLTE/zipball/1ff65e5bd99ab3ee8985e9512b2096efce58edd2",
+            "reference": "1ff65e5bd99ab3ee8985e9512b2096efce58edd2",
+            "shasum": ""
+        },
+        "time": "2019-07-31T06:46:17+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Colorlib"
+            }
+        ],
+        "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 4",
+        "homepage": "http://adminlte.io/",
+        "keywords": [
+            "JS",
+            "admin",
+            "back-end",
+            "css",
+            "less",
+            "responsive",
+            "template",
+            "theme",
+            "web"
+        ]
+    },
+    {
         "name": "beyondcode/laravel-dump-server",
         "version": "1.3.0",
         "version_normalized": "1.3.0.0",
